@@ -23,7 +23,13 @@ const useStyles = makeStyles((theme) => ({
     width:"100px",
     flexGrow: "1",
     cursor: "pointer",
-    marginLeft: "15px"
+    marginLeft: "15px",
+
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: "20px", // Adjust padding for small screens (mobile)
+      fontSize: '1rem',   // Adjust font size for small screens (mobile)
+      width: "auto",      // Allow the title to adjust its width for small screens
+    },
   },
   link: {
     textDecoration: "none",
@@ -31,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
     marginLeft: theme.spacing(20),
     "&:hover": {
-      color: "yellow",
+      color: "darkblue",
       borderBottom: "1px solid white",
     }
    
@@ -39,12 +45,19 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     backgroundColor: 'white' ,
     color: "black",
-    height: "120px"
+    height: "120px",
+    [theme.breakpoints.down('sm')]: {
+      height: "80px", // Adjust height for small screens (mobile)
+    },
   },
   logo:{
     marginRight: theme.spacing(2),
     height:"120px",
-    width:"auto"
+    width:"auto",
+    [theme.breakpoints.down('sm')]: {
+      height: "80px", // Adjust height for small screens (mobile)
+      marginRight: 0, // Remove margin for small screens (mobile)
+    },
   }
 }));
 
@@ -52,7 +65,7 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.appbar}> 
+    <AppBar position="fixed" className={classes.appbar}> 
       <CssBaseline />
       <Toolbar>
       <Box  className={classes.logo}
