@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./component/navbar";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import CssBaseline from '@mui/material/CssBaseline';
+import NavBar from "./component/NavBar";
 
 function App() {
   return (
     <Router>
       <CssBaseline />
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
