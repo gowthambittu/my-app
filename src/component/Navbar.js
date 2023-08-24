@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(10),
     display: "flex",
   },
+ 
  title: {
     paddingTop:"80px",
     color:"#2680be",
@@ -61,11 +62,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function NavBar() {
+function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="fixed" className={classes.appbar}> 
+    <AppBar position="fixed" width='Auto' className={classes.appbar}> 
       <CssBaseline />
       <Toolbar>
       <Box  className={classes.logo}
@@ -97,4 +98,4 @@ function NavBar() {
     </AppBar>
   );
 }
-export default NavBar;
+export default Navbar;

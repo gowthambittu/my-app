@@ -4,13 +4,13 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import CssBaseline from '@mui/material/CssBaseline';
-import NavBar from "./component/NavBar";
+import Navbar from "./component/Navbar";
 
 function App() {
   return (
     <Router>
       <CssBaseline />
-      <NavBar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
