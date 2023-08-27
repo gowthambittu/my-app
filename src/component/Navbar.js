@@ -15,7 +15,7 @@ import { makeStyles } from "@mui/styles"; // Use this import statement for newer
 
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../assests/logo1.jpg";
+import Logo from "../assests/logo2.jpg";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
     cursor: "pointer",
     marginLeft: "15px",
+    [theme.breakpoints.down("sm")]: {
+ // Hide links on small screens by default
+
+    },
   },
   link: {
     textDecoration: "none",
@@ -51,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     height: "120px",
     width: "auto",
+    marginLeft:'-23px',
+    [theme.breakpoints.down("sm")]: {
+      marginLeft:'32px',
+    },
   },
   mobileMenuButton: {
     display: "none", // Hide the menu button on larger screens
@@ -80,8 +88,8 @@ function Navbar() {
       <CssBaseline />
       <Toolbar>
         <Box className={classes.logo} component="img" alt="Your logo." src={Logo} />
-        <Typography variant="h5" className={classes.title}>
-          SRA Infra Developers
+        <Typography variant="h5" fontSize="20px" className={classes.title}>
+          SRA INFRA DEVELOPERS
         </Typography>
         <div className={classes.navlinks}>
           <Link to="/" className={classes.link}>
