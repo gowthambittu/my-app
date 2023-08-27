@@ -12,7 +12,7 @@ import { Button, CardActionArea, CardActions, makeStyles } from '@material-ui/co
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      paddingTop: theme.spacing(3),
+      paddingTop: theme.spacing(16),
       paddingBottom: theme.spacing(3),
     },
     paper: {

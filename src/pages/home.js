@@ -8,14 +8,23 @@ import HomeImg from "../assests/homePgImg.jpeg";
 
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        paddingTop: theme.spacing(16),
+        paddingBottom: theme.spacing(3),
+      },
     navlinks: {
       paddingTop:"80px",
       marginLeft: theme.spacing(10),
       display: "flex",
     },
-    imageContainer: {
-        overflow: "hidden"
-    }
+    container: {
+        maxWidth: '1150px', // Set the maximum width for larger screens
+        margin: '0 auto',   // Center the container horizontally
+        [theme.breakpoints.down('sm')]: {
+          maxWidth: '100%', // Adjust for smaller screens (mobile)
+          padding: '0 0px', // Add some horizontal padding for mobile
+        },
+      },
 }
 )
 );
@@ -24,21 +33,24 @@ function Home(){
     const classes = useStyles();
     return(
         <div>
-           <Container fixed>
-                <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }}  >
-                <ImageList sx={{ width: 1150, height: 500 }} variant="woven" cols={3} gap={8} className={classes.imageContainer}>
+           <Container className={classes.root} sx={{ bgcolor: '#cfe8fc' }} fixed>
+           <Box sx={{ bgcolor: '#cfe8fc', minHeight: '100vh' }}>
+                <Box className={classes.container}>
+                    <ImageList variant="woven" cols={1} gap={8}>
                     {itemData.map((item) => (
-                        <ImageListItem key={item.img} sx={{width: 1150, height: 500}} >
+                        <ImageListItem key={item.img}>
                         <img
                             src={`${item.img}?w=161&fit=crop&auto=format`}
                             srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
                             alt={item.title}
                             loading="lazy"
+                            style={{ width: '100%', height: 'auto' }}
                         />
                         </ImageListItem>
                     ))}
                     </ImageList>
-                 </Box>   
+                </Box>
+             </Box>
             </Container>
         </div>
     )
