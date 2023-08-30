@@ -32,35 +32,51 @@ const useStyles = makeStyles((theme) => ({
     height: '40vh', 
     // margin: 2,
     width:'50vh',
-    marginLeft:'21rem',
+    marginLeft:'1rem',
+    paddingLeft:300,
+    paddingRight:300,
     [theme.breakpoints.down('sm')]: {
      height:'50vh',
      marginLeft:-11,
+     paddingLeft:0,
+    paddingRight:0,
     },
    
   },
   imageCard:{
-    width: '25vh',
-    height:'40vh',
+    
+    // width: '48%',
+    // padding: '20px',
+    // border: '1px' 'solid' '#ccc',
+    // height:'40vh',
     [theme.breakpoints.down('sm')]: {
       height:'30vh'
      },
   },
+  
   img:{
     // height:1000, 
     // width:1000, 
-    marginLeft: 45,
+    // marginLeft: '8%',
     marginTop:50,
     [theme.breakpoints.down('sm')]: {
       height: 50, 
       width: 80, 
-      marginRight:40,
-      marginTop:20,
+      // marginRight:40,
+      // marginTop:20,
      },
      name:{
       
      }
-  }
+  ,},
+  container: {
+    display: 'flex', /* Use flexbox to create a flexible container */
+    justifyContent: 'space-between', /* Distribute space evenly between the boxes */
+    alignItems: 'center', /* Align items vertically in the center */
+  },
+  
+  
+
 }));
 
 function About() {
@@ -84,11 +100,11 @@ function About() {
           attention to detail. and excellent customer service.Contact us today
           to start your construction journey.
         </Typography>
-        <Box className={classes.box} >
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box className={classes.box} sx={{width:'auto'}}>
+          <div className={classes.container}>
             <Card className={classes.imageCard} >
               <CardActionArea>
-                <Avatar alt="Remy Sharp"  sx={{width:120,height:120}} className={classes.img} />
+                <Avatar alt="Remy Sharp"  sx={{width:'auto',height:120}} className={classes.img} />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div" className={classes.name}>
                     Shankar D
@@ -100,10 +116,10 @@ function About() {
             </Card>
             <Card className={classes.imageCard}>
               <CardActionArea>
-                <Avatar alt="Remy Sharp" src={Profile} sx={{width:120,height:120}} className={classes.img} />
+                <Avatar alt="Remy Sharp" src={Profile} sx={{width:'auto',height:120}} className={classes.img} />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div" className={classes.name}>
-                    Ajay Varma D
+                    Ajay Varma 
                   </Typography>
                   
                 </CardContent>
