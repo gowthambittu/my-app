@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     // height:1000, 
     // width:1000, 
     // marginLeft: '8%',
-    marginTop:50,
+    // marginTop:50,
     [theme.breakpoints.down('sm')]: {
       height: 50, 
       width: 80, 
@@ -116,7 +116,7 @@ function About() {
             </Card>
             <Card className={classes.imageCard}>
               <CardActionArea>
-                <Avatar alt="Remy Sharp" src={Profile} sx={{width:'auto',height:120}} className={classes.img} />
+                <Avatar alt="Remy Sharp" sx={{width:'auto',height:120}} className={classes.img} />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div" className={classes.name}>
                     Ajay Varma 
