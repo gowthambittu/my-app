@@ -53,6 +53,7 @@ const handleSubmit = async (e) => {
   try {
     const response = await fetch('https://my-app-backend-3d9285b8e62a.herokuapp.com/send-email', {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
